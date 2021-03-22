@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    tools:context="DetailActivity">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tom_and_jerry"
+        tools:text="Tom and Jerry"
+        tools:textSize="30sp"
+        tools:ignore="HardcodedText" />
+
+    <RatingBar
+        android:id="@+id/ratingBar3"
+        android:layout_width="474dp"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="10"
+        android:rating="8.5" />
+
+    <TextView
+        android:id="@+id/tvOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tom_the_cat_and_jerry_the_mouse_get_kicked_out_of_their_home_and_relocate_to_a_fancy_new_york_hotel_where_a_scrappy_employee_named_kayla_will_lose_her_job_if_she_can_t_evict_jerry_before_a_high_class_wedding_at_the_hotel_her_solution_hiring_tom_to_get_rid_of_the_pesky_mouse" />
+</LinearLayout>

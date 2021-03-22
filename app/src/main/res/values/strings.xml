@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Flixster</string>
+    <string name="tom_and_jerry">Tom and Jerry</string>
+    <string name="tom_the_cat_and_jerry_the_mouse_get_kicked_out_of_their_home_and_relocate_to_a_fancy_new_york_hotel_where_a_scrappy_employee_named_kayla_will_lose_her_job_if_she_can_t_evict_jerry_before_a_high_class_wedding_at_the_hotel_her_solution_hiring_tom_to_get_rid_of_the_pesky_mouse">Tom the cat and Jerry the mouse get kicked out of their home and relocate to a fancy New York hotel, where a scrappy employee named Kayla will lose her job if she can’t evict Jerry before a high-class wedding at the hotel. Her solution? Hiring Tom to get rid of the pesky mouse.</string>
 </resources>
