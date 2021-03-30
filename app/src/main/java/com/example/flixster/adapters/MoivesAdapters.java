@@ -53,7 +53,7 @@ public class MoivesAdapters extends RecyclerView.Adapter<MoivesAdapters.ViewHold
       //get the movie at the passed position
         Movie movie = movies.get(position);
      // bind movie data in to the VH
-       holder.bind(movie);
+       holder.bind(movie,position);
     }
 
     // Returns the total count of items in the list
@@ -77,7 +77,7 @@ public class MoivesAdapters extends RecyclerView.Adapter<MoivesAdapters.ViewHold
 
         }
 
-        public void bind( final Movie movie) {
+        public void bind( final Movie movie,int position  ) {
             textViewTitle.setText(movie.getTitle());
             textViewOverview.setText(movie.getOverview());
             String imageUrl;
@@ -97,9 +97,9 @@ public class MoivesAdapters extends RecyclerView.Adapter<MoivesAdapters.ViewHold
                 public void onClick(View v) {
                  //2. Navigate to a new activity  on tap
                     Intent i = new Intent(context, DetailActivity.class);
-                    i.putExtra( "movie", Parcels.wrap(movies));
+                    i.putExtra( "movie", Parcels.wrap(movies.get(position)));
                     context.startActivity(i);
-             }
+                }
          });
 
         }

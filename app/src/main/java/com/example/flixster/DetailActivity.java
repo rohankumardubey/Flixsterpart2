@@ -33,29 +33,33 @@ import okhttp3.Headers;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-      tvTitle =findViewById(R.id.tvTitle);
-      textViewOverview = findViewById(R.id.tvOverview);
-      ratingBar = findViewById(R.id.ratingBar3);
-      youTubePlayerView = findViewById(R.id.player);
+        tvTitle =findViewById(R.id.tvTitle);
+        textViewOverview = findViewById(R.id.tvOverview);
+        ratingBar = findViewById(R.id.ratingBar3);
+        youTubePlayerView = findViewById(R.id.player);
 
-       Movie movie = Parcels.unwrap(getIntent().getParcelableExtra( "movie"));
-       tvTitle.setText(movie.getTitle());
-       textViewOverview.setText(movie.getOverview());
-       ratingBar.setRating((float) movie.getRating());
+        Log.i("DetailActivity", "we are catching this");
+        Movie movie = Parcels.unwrap(getIntent().getParcelableExtra( "movie"));
+
+        tvTitle.setText(movie.getTitle());
+        textViewOverview.setText(movie.getOverview());
+        ratingBar.setRating((float) movie.getRating());
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(String.format(VIDEOS_URL, movie.getMovieId()), new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Headers headers, JSON json) {
+                        Log.d("DetailActivity", "onSuccess");
                         try {
                             JSONArray results = json.jsonObject.getJSONArray("results");
                             if (results.length() == 0) {
                                 return;
+                            } else {
+                                String youtubeKey = results.getJSONObject(0).getString("key");
+                                Log.d("DetailActivity", youtubeKey);
+                                initializeYoutube(youtubeKey);
                             }
-                            String youtubeKey = results.getJSONObject(0).getString("key");
-                            Log.d("DetailActivity", youtubeKey);
-                            initializeYoutube(youtubeKey);
-                        } catch (JSONException e) {
+                        }catch (JSONException e) {
                             Log.e("DetailActivity", "Failed to parse JSON", e);
                         }
                     }
