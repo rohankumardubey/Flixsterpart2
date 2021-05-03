@@ -22,7 +22,7 @@ import okhttp3.Headers;
    public class DetailActivity extends YouTubeBaseActivity {
 
    private  static final  String YOUTUBE_API_KEY ="AIzaSyBgnM4oTp0TTnGHueWc0vt3AbMJ2CkzTL4";
-   public static final String VIDEOS_URL = "https://api.themoviedb.org/3/movie/$d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+   public static final String VIDEOS_URL = "https://api.themoviedb.org/3/movie/%s/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     TextView tvTitle;
     TextView textViewOverview ;
     RatingBar ratingBar;
